@@ -1,4 +1,4 @@
-import loadenv from 'dotenv';
-loadenv.config();
+import { config } from 'dotenv';
+config();
 
 export const PORT = process.env.PORT;
