@@ -1,6 +1,8 @@
 import express from 'express';
-import { PORT } from './config/server.config.js';
 import { StatusCodes } from 'http-status-codes';
+
+import connectTODB from './config/db.config.js';
+import { PORT } from './config/server.config.js';
 const app = express();
 
 app.use(express.json());
@@ -12,4 +14,5 @@ app.get('/ping', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`serving running on port : ${PORT}`);
+  connectTODB();
 });
